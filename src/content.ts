@@ -1,0 +1,96 @@
+import brief from './brief.json';
+import type { Locale } from './locale';
+
+export const contact = {
+  phone: '+972543030283',
+  phoneDisplay: '054-3030283',
+  email: 'yosi@zarabi-law.com',
+  whatsapp: 'https://wa.me/972543030283',
+};
+
+export const practiceIds = ['real-estate', 'finance', 'corporate', 'commercial', 'regulation', 'international', 'litigation'] as const;
+
+const ui = {
+  he: {
+    name: 'זרבי ושות׳', lawOffice: 'משרד עורכי דין',
+    nav: ['בית', 'אודות', 'תחומי עיסוק', 'צור קשר'],
+    meeting: 'לתיאום פגישה', discover: 'להכיר את המשרד', explore: 'לכל תחומי העיסוק',
+    expertise: 'מומחיות שמתחברת לתמונה המלאה.',
+    expertiseLabel: 'תחומי העיסוק שלנו', aboutLabel: 'המשרד',
+    introTitle: 'עסקאות משמעותיות.\nתשומת לב אישית.',
+    philosophyLabel: 'הדרך שלנו', philosophyTitle: 'לראות מעבר\nלסעיף הבא.',
+    philosophyIntro: 'ידע משפטי הוא נקודת המוצא. להבין מה באמת חשוב לכם — זו הדרך שלנו.',
+    trustedLabel: 'שותפים לדרך', clientsTitle: 'אמון שנבנה.\nמערכות יחסים שנשארות.',
+    clientSectors: ['נדל״ן ואחזקות', 'טכנולוגיה', 'רכב ותעשייה', 'מימון והשקעות'],
+    founderLabel: 'השותף שלכם לדרך', founderName: 'עו״ד יוסי זרבי', founderRole: 'מייסד המשרד',
+    aboutTitle: 'משרד בוטיק.\nראייה רחבה.',
+    practiceTitle: 'עומק משפטי.\nיתרון עסקי.',
+    contactTitle: 'כל מהלך גדול\nמתחיל בשיחה.',
+    contactLabel: 'בואו נדבר', office: 'המשרד שלנו', address: 'מגדל טויוטה A, קומה 9',
+    street: 'יגאל אלון 65, תל אביב–יפו 6744316', appointments: 'פגישות בתיאום מראש',
+    phone: 'טלפון', email: 'דוא״ל', whatsapp: 'WhatsApp', whatsappLabel: 'פתיחת שיחה ב־WhatsApp (אתר חיצוני)',
+    scroll: 'לגלות עוד', location: 'תל אביב, ישראל', since: 'בוטיק. אישי. מדויק.',
+    privacy: 'מדיניות פרטיות', terms: 'תנאי שימוש', accessibility: 'הצהרת נגישות',
+    rights: 'כל הזכויות שמורות.', menu: 'פתיחת תפריט', close: 'סגירה', skip: 'דילוג לתוכן',
+    practiceNav: 'ניווט בין תחומי עיסוק', readMore: 'למידע נוסף', back: 'חזרה לעמוד הבית',
+    notFound: 'העמוד לא נמצא', notFoundText: 'הכתובת אינה קיימת. נשמח להחזיר אתכם לעמוד הבית.',
+    mapTitle: 'בלב העשייה של תל אביב', mapNote: 'איור מיקום סכמטי · ללא שירות מפות חיצוני',
+    form: {
+      title: 'נשמח להכיר.', name: 'שם מלא', phone: 'טלפון', email: 'דוא״ל',
+      company: 'חברה / ארגון', optional: 'לא חובה', subject: 'תחום הפנייה',
+      select: 'בחרו תחום', other: 'אחר', message: 'כמה מילים על הפנייה',
+      placeholder: 'ספרו לנו בקצרה כיצד נוכל לעזור. ללא מידע רגיש.',
+      consent: 'קראתי את מדיניות הפרטיות ואני מאשר/ת יצירת קשר.',
+      submit: 'הכנת פנייה בדוא״ל', localNote: 'תצוגה מקומית: הטופס מכין טיוטת דוא״ל בלבד. דבר לא נשלח או נשמר באתר.',
+      ready: 'הטיוטה מוכנה — הפנייה עדיין לא נשלחה.',
+      readyNote: 'פתחו את הטיוטה בתוכנת הדוא״ל ושלחו אותה בעצמכם. אם לא מוגדרת תוכנת דוא״ל, העתיקו את הפרטים ושלחו לכתובת שלמטה.',
+      open: 'פתיחת טיוטה בדוא״ל', edit: 'עריכת הפנייה', draft: 'טיוטת הפנייה',
+      invalid: 'יש למלא את כל שדות החובה ולאשר את מדיניות הפרטיות.',
+      invalidPhone: 'יש להזין מספר טלפון תקין, הכולל 7–15 ספרות.',
+      emailSubject: 'פנייה חדשה לאתר — ',
+    },
+  },
+  en: {
+    name: 'Zarabi & Co.', lawOffice: 'LAW OFFICE',
+    nav: ['Home', 'About', 'Practice Areas', 'Contact'],
+    meeting: 'Arrange a meeting', discover: 'Discover the firm', explore: 'All practice areas',
+    expertise: 'Perspective across every dimension.',
+    expertiseLabel: 'Our expertise', aboutLabel: 'The firm',
+    introTitle: 'Significant transactions.\nPersonal attention.',
+    philosophyLabel: 'Our approach', philosophyTitle: 'Beyond the\nnext clause.',
+    philosophyIntro: 'Legal knowledge is the starting point. Understanding what truly matters to you is our way forward.',
+    trustedLabel: 'In good company', clientsTitle: 'Trust, built.\nRelationships, lasting.',
+    clientSectors: ['Real estate & holdings', 'Technology', 'Automotive & industry', 'Finance & investment'],
+    founderLabel: 'Your partner at the table', founderName: 'Adv. Yosi Zarabi', founderRole: 'Founder',
+    aboutTitle: 'Boutique by choice.\nBroad by perspective.',
+    practiceTitle: 'Legal depth.\nCommercial advantage.',
+    contactTitle: 'Every great move\nstarts with a conversation.',
+    contactLabel: 'Let’s talk', office: 'Visit the office', address: 'Toyota Tower A, 9th Floor',
+    street: '65 Yigal Alon St., Tel Aviv–Jaffa 6744316', appointments: 'Meetings by appointment',
+    phone: 'Phone', email: 'Email', whatsapp: 'WhatsApp', whatsappLabel: 'Open a WhatsApp conversation (external site)',
+    scroll: 'Explore below', location: 'Tel Aviv, Israel', since: 'Boutique. Personal. Precise.',
+    privacy: 'Privacy Policy', terms: 'Terms of Use', accessibility: 'Accessibility',
+    rights: 'All rights reserved.', menu: 'Open menu', close: 'Close', skip: 'Skip to content',
+    practiceNav: 'Practice area navigation', readMore: 'Explore practice', back: 'Back to home',
+    notFound: 'Page not found', notFoundText: 'This address does not exist. Let’s take you back to the firm.',
+    mapTitle: 'At the heart of Tel Aviv', mapNote: 'Schematic illustration · no external map service',
+    form: {
+      title: 'We’d be glad to meet you.', name: 'Full name', phone: 'Phone', email: 'Email',
+      company: 'Company / organisation', optional: 'optional', subject: 'Area of enquiry',
+      select: 'Select an area', other: 'Other', message: 'A few words about your enquiry',
+      placeholder: 'Briefly tell us how we can help. Please omit sensitive information.',
+      consent: 'I have read the Privacy Policy and consent to being contacted.',
+      submit: 'Prepare email enquiry', localNote: 'Local preview: this form only prepares an email draft. Nothing is sent or stored by the website.',
+      ready: 'Your draft is ready — your enquiry has not been sent.',
+      readyNote: 'Open the draft in your email app and send it yourself. If no email app is configured, copy the details and email them to the address below.',
+      open: 'Open draft in email app', edit: 'Edit enquiry', draft: 'Your email draft',
+      invalid: 'Please complete all required fields and accept the Privacy Policy.',
+      invalidPhone: 'Please enter a valid phone number with 7–15 digits.',
+      emailSubject: 'Website enquiry — ',
+    },
+  },
+};
+
+export function content(locale: Locale) {
+  return { ...brief[locale], ui: ui[locale] };
+}
